@@ -12,7 +12,7 @@ resource "aws_vpc" "main" {
 
 #Create security group with firewall rules
 resource "aws_security_group" "open to world" {
-  name        = var.security_group
+  name        = var.open to world
   description = "security group for Ec2 instance"
 
   ingress {
