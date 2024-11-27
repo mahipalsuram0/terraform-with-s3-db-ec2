@@ -1,16 +1,17 @@
+
 resource "aws_instance" "mySonarInstance" {
       ami           = "ami-0166fe664262f664c"
       key_name = var.key_name
       instance_type = "t2.micro"
-      vpc_security_group_ids = [aws_security_group.security_group.id]
+      vpc_security_group_ids = [aws_security_group.sonar-sg-2022.id]
       tags= {
         Name = "sonar_instance"
       }
     }
 
- resource "aws_security_group" "security_group" {
-      name        = "open to world"
-      description = "open to world"
+ resource "aws_security_group" "sonar-sg-2022" {
+      name        = "security_sonar_group_2022"
+      description = "security group for Sonar"
 
       ingress {
         from_port   = 9000
@@ -35,7 +36,7 @@ resource "aws_instance" "mySonarInstance" {
       }
 
       tags= {
-        Name = "security_group"
+        Name = "security_sonar"
       }
     }
 
