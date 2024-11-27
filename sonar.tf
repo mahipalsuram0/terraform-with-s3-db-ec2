@@ -8,7 +8,7 @@ resource "aws_instance" "mySonarInstance" {
       }
     }
 
- resource "aws_security_group" "open to world" {
+ resource "aws_security_group" "security_group" {
       name        = "open to world"
       description = "open to world"
 
@@ -35,7 +35,7 @@ resource "aws_instance" "mySonarInstance" {
       }
 
       tags= {
-        Name = "security_sonar"
+        Name = "security_group"
       }
     }
 
